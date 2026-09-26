@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { Highlight } from "@/components/ui/highlight";
 
@@ -70,7 +69,7 @@ export function ConferencesDtc() {
       className="w-full bg-muted px-6 py-16 sm:px-12 sm:py-20 lg:px-24"
     >
       <div className="mx-auto max-w-[1400px]">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="max-w-3xl">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--sun-gold)]">
               Participation
@@ -89,25 +88,10 @@ export function ConferencesDtc() {
             </p>
           </div>
 
-          <figure className="relative aspect-[4/3] overflow-hidden bg-foreground/10 sm:aspect-[16/9]">
-            <Image
-              src="/images/un/hlpf.jpg"
-              alt="DTC attending the High-Level Political Forum on Sustainable Development at UN Headquarters"
-              fill
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              unoptimized
-              loading="eager"
-              className="object-cover object-[50%_24%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent" />
-            <figcaption className="absolute inset-x-0 bottom-0 px-5 py-4 text-sm font-medium text-background sm:px-7 sm:py-5">
-              High-Level Political Forum · United Nations Headquarters
-            </figcaption>
-          </figure>
         </div>
 
         <motion.ul
-          className="mt-12 grid gap-x-12 sm:grid-cols-2 lg:mt-16"
+          className="mt-8 grid gap-x-12 sm:mt-10 sm:grid-cols-2"
           variants={listVariants}
           initial={reduceMotion ? false : "hidden"}
           whileInView={reduceMotion ? undefined : "visible"}
